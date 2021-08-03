@@ -2,12 +2,15 @@
 #include "..\\modules\\include\\a_samp.inc"
 #include "..\\modules\\include\\a_mysql.inc"
 #include "..\\modules\\include\\mdialog.inc"
+#include "..\\modules\\include\\streamer.inc"
 
 
 /* Modules */
 #include "..\\modules\\core.inc"
 #include "..\\modules\\core.pwn"
 
+#include "..\\modules\\mapping.pwn"
+#include "..\\modules\\pickups.pwn"
 #include "..\\modules\\textdraw.pwn"
 
 #include "..\\modules\\player.inc"
@@ -25,6 +28,8 @@ public OnGameModeInit()
 {
 	core_MySQLConnect();
 
+	mapping_Load();
+	pickups_Load();
 	textdraw_Create();
 	return true;
 }
@@ -45,6 +50,8 @@ public OnPlayerRequestClass(playerid, classid)
 public OnPlayerConnect(playerid)
 {
 	player_OnPlayerConnect(playerid);
+
+	mapping_LoadRBFP(playerid);
 	return true;
 }
 
