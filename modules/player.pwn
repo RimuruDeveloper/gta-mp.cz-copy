@@ -125,12 +125,12 @@ public OnPlayerCheck(playerid)
 
 DialogCreate:Login(playerid)
 {
-	Dialog_Open(playerid, Dialog:Login, DIALOG_STYLE_PASSWORD, !"Авторизация", "{ffffff}Добро пожаловать на GTA-MULTIPLAYER.CZ игровой сервер!\n\n\
-		{ff0080}Пожалуйста, введите пароль для входа в свой игровой аккаунт.\n", !"Вход", !"Закрыть");
+	Dialog_Open(playerid, Dialog:Login, DIALOG_STYLE_PASSWORD, !"РђРІС‚РѕСЂРёР·Р°С†РёСЏ", "{ffffff}Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° GTA-MULTIPLAYER.CZ РёРіСЂРѕРІРѕР№ СЃРµСЂРІРµСЂ!\n\n\
+		{ff0080}РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ РґР»СЏ РІС…РѕРґР° РІ СЃРІРѕР№ РёРіСЂРѕРІРѕР№ Р°РєРєР°СѓРЅС‚.\n", !"Р’С…РѕРґ", !"Р—Р°РєСЂС‹С‚СЊ");
 }
 DialogCreate:LoginPasswordError(playerid)
 {
-	Dialog_Open(playerid, Dialog:LoginPasswordError, DIALOG_STYLE_MSGBOX, !"Авторизация", "{ffffff}Вы ввели неправильный пароль!\n", !"Назад", !"");
+	Dialog_Open(playerid, Dialog:LoginPasswordError, DIALOG_STYLE_MSGBOX, !"РђРІС‚РѕСЂРёР·Р°С†РёСЏ", "{ffffff}Р’С‹ РІРІРµР»Рё РЅРµРїСЂР°РІРёР»СЊРЅС‹Р№ РїР°СЂРѕР»СЊ!\n", !"РќР°Р·Р°Рґ", !"");
 }
 DialogResponse:Login(playerid, response, listitem, inputtext[])
 {
@@ -156,16 +156,16 @@ DialogResponse:Login(playerid, response, listitem, inputtext[])
 
         new version[10];
     	GetPlayerVersion(playerid, version, sizeof(version));
-    	if(strcmp(version, "0.3.7-R4")) SendClientMessage(playerid, 0xFF0000FF, "ВНИМАНИЕ! Вы используете устаревшую версию клиента игры. Скачайте последнюю версию 0.3.7 R4 по адресу GTA-MULTIPLAYER.CZ!");
+    	if(strcmp(version, "0.3.7-R4")) SendClientMessage(playerid, 0xFF0000FF, "Р’РќРРњРђРќРР•! Р’С‹ РёСЃРїРѕР»СЊР·СѓРµС‚Рµ СѓСЃС‚Р°СЂРµРІС€СѓСЋ РІРµСЂСЃРёСЋ РєР»РёРµРЅС‚Р° РёРіСЂС‹. РЎРєР°С‡Р°Р№С‚Рµ РїРѕСЃР»РµРґРЅСЋСЋ РІРµСЂСЃРёСЋ 0.3.7 R4 РїРѕ Р°РґСЂРµСЃСѓ GTA-MULTIPLAYER.CZ!");
 
-    	SendClientMessage(playerid, -1, "Вы вошли в аккаунт! Получайте удовольствие от игры на нашем сервере.");
+    	SendClientMessage(playerid, 0xE75480AA, "Р’С‹ РІРѕС€Р»Рё РІ Р°РєРєР°СѓРЅС‚! РџРѕР»СѓС‡Р°Р№С‚Рµ СѓРґРѕРІРѕР»СЊСЃС‚РІРёРµ РѕС‚ РёРіСЂС‹ РЅР° РЅР°С€РµРј СЃРµСЂРІРµСЂРµ.");
    	}
     else
    	{
    		if(gRegPasswordAttempts[playerid] == 3)
    		{
    			new str[46 - 2 + MAX_PLAYER_NAME];
-   			format(str, sizeof(str), "%s был отключён за 3 неудачные попытки авторизации", Player[playerid][Name]);
+   			format(str, sizeof(str), "%s Р±С‹Р» РѕС‚РєР»СЋС‡С‘РЅ Р·Р° 3 РЅРµСѓРґР°С‡РЅС‹Рµ РїРѕРїС‹С‚РєРё Р°РІС‚РѕСЂРёР·Р°С†РёРё", Player[playerid][Name]);
    			SendClientMessageToAll(0xFF0000FF, str);
    			return Kick(playerid);
    		}
@@ -182,13 +182,13 @@ DialogResponse:LoginPasswordError(playerid, response, listitem, inputtext[])
 
 DialogCreate:Register(playerid)
 {
-	Dialog_Open(playerid, Dialog:Register, DIALOG_STYLE_PASSWORD, !"Регистрация", "{ffffff}Добро пожаловать на GTA-MULTIPLAYER.CZ игровой сервер!\n\n\
-		{ff0080}Пожалуйста, введите пароль для регистрации игрового аккаунта. Вы будете использовать этот\n\
-		пароль для последующего входа в свой игровой аккаунт!\n", !"Регистрация", !"Закрыть");
+	Dialog_Open(playerid, Dialog:Register, DIALOG_STYLE_PASSWORD, !"Р РµРіРёСЃС‚СЂР°С†РёСЏ", "{ffffff}Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° GTA-MULTIPLAYER.CZ РёРіСЂРѕРІРѕР№ СЃРµСЂРІРµСЂ!\n\n\
+		{ff0080}РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ РґР»СЏ СЂРµРіРёСЃС‚СЂР°С†РёРё РёРіСЂРѕРІРѕРіРѕ Р°РєРєР°СѓРЅС‚Р°. Р’С‹ Р±СѓРґРµС‚Рµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ СЌС‚РѕС‚\n\
+		РїР°СЂРѕР»СЊ РґР»СЏ РїРѕСЃР»РµРґСѓСЋС‰РµРіРѕ РІС…РѕРґР° РІ СЃРІРѕР№ РёРіСЂРѕРІРѕР№ Р°РєРєР°СѓРЅС‚!\n", !"Р РµРіРёСЃС‚СЂР°С†РёСЏ", !"Р—Р°РєСЂС‹С‚СЊ");
 }
 DialogCreate:RegisterPasswordWeak(playerid)
 {
-	Dialog_Open(playerid, Dialog:Register, DIALOG_STYLE_MSGBOX, !"Регистрация", "{ffffff}Этот пароль слишком лёгкий!\n", !"Регистрация", !"");
+	Dialog_Open(playerid, Dialog:Register, DIALOG_STYLE_MSGBOX, !"Р РµРіРёСЃС‚СЂР°С†РёСЏ", "{ffffff}Р­С‚РѕС‚ РїР°СЂРѕР»СЊ СЃР»РёС€РєРѕРј Р»С‘РіРєРёР№!\n", !"Р РµРіРёСЃС‚СЂР°С†РёСЏ", !"");
 }
 DialogResponse:Register(playerid, response, listitem, inputtext[])
 {
@@ -199,9 +199,12 @@ DialogResponse:Register(playerid, response, listitem, inputtext[])
     for (new i = 0; i < 16; i++) Player[playerid][Salt][i] = random(94) + 33;
     SHA256_PassHash(inputtext, Player[playerid][Salt], Player[playerid][Password], 65);
 
-	static const string[] = "INSERT INTO `players` (`nickname`, `password`, `salt`) VALUES ('%e', '%e', '%e')";
-    new query[sizeof(string) - 6 + MAX_PLAYER_NAME + 65 + 17];
-    mysql_format(handle, query, sizeof(query), string, Player[playerid][Name], Player[playerid][Password], Player[playerid][Salt]);
+	Player[playerid][Skin] = random(312);
+
+	static const string[] = "INSERT INTO `players` (`nickname`, `password`, `salt`, `skin`) VALUES ('%e', '%e', '%e', '%d')";
+    new query[sizeof(string) - 8 + MAX_PLAYER_NAME + 65 + 17 + 3];
+    mysql_format(handle, query, sizeof(query), string, Player[playerid][Name], Player[playerid][Password], Player[playerid][Salt],
+    	Player[playerid][Skin]);
     mysql_tquery(handle, query, "OnPlayerRegister", "d", playerid);
 
     KillTimer(gRegCameraTimer[playerid]);
