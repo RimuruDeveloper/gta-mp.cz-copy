@@ -1,8 +1,3 @@
-
-
-
-
-
 stock core_MySQLConnect()
 {
 	new MySQLOpt:option_id = mysql_init_options();
