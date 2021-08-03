@@ -6,6 +6,8 @@
 
 
 /* Modules */
+#include "..\\modules\\config.inc"
+
 #include "..\\modules\\core.inc"
 #include "..\\modules\\core.pwn"
 
