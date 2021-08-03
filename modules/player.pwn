@@ -153,7 +153,13 @@ DialogResponse:Login(playerid, response, listitem, inputtext[])
 
 		SetSpawnInfo(playerid, 0, 0, Player[playerid][PosX], Player[playerid][PosY], Player[playerid][PosZ], Player[playerid][Angle], 0, 0, 0, 0, 0, 0);
         SpawnPlayer(playerid);
-    }
+
+        new version[10];
+    	GetPlayerVersion(playerid, version, sizeof(version));
+    	if(strcmp(version, "0.3.7-R4")) SendClientMessage(playerid, 0xFF0000FF, "ВНИМАНИЕ! Вы используете устаревшую версию клиента игры. Скачайте последнюю версию 0.3.7 R4 по адресу GTA-MULTIPLAYER.CZ!");
+
+    	SendClientMessage(playerid, -1, "Вы вошли в аккаунт! Получайте удовольствие от игры на нашем сервере.");
+   	}
     else
    	{
    		if(gRegPasswordAttempts[playerid] == 3)
